@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>
+      Small Library
+    </title>
+  </head>
+  <body>
+    <div class="modal-header">
+      <a href="{% url 'small_library_app.views.home' %}"><img src="{% static 'img/poziom.jpg' %}" class="img-thumbnail"></a>
+      <h1> Small Library</h1>
+    </div>
+    <div class="container">
+    	{% block content %}
+    	{% endblock %}
+    	
+    </div>
+    <div class="modal-footer">
+      <h5>by Stella Jedynak 2015</h5>
+    </div>
+  </body>
+</html>

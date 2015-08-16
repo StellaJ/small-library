@@ -1,0 +1,30 @@
+h1 {
+	display: inline-block;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.container {
+	margin-top: 15px;
+	/*margin-bottom: 15px;*/
+}
+
+.review {
+	background-color: #D4D8DC;
+	border-radius: 10px;
+	padding: 5px 20px 5px 20px;
+	max-width: 600px;
+	margin-bottom: 10px;
+
+}
+
+.review h4, .review h5 {
+	color: #1F1F5C;
+	font-weight: 300;
+}
+
+.modal-footer {
+	/*height: 75px;*/
+	margin-top: 30px;
+	margin-bottom: 0px;
+}

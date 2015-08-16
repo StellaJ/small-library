@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block content %}
+  <h1><strong>{{ book.title }}</strong></h1><br>
+  <p>Author: {{ book.author }}</p>
+  <p>ISBN: {{ book.ISBN }}</p>
+  <img src="{{ book.description.url }}" class="img-thumbnail">
+  <div>
+    <h4 class="text-info">Review</h4>
+    {% for r in book.review_set.all %}
+    <div class="review">
+    	<h5><span><em>Author: {{ r.name }}</em></span></h5>
+    	<h5><em>Date of publication: {{ r.published }}</em></h5>
+    	<h4>{{ r.content }}</h4>
+    </div>
+  </div>
+  {% endfor %}
+   <h4><a href="/small_library_app/{{ book.id }}/new_review/"><span class="glyphicon-pencil">add new review</span></a></h4>
+   <h4><a href="{% url 'small_library_app.views.home' %}"><span class="glyphicon-pencil">return to list of books</span></a></h4>
+   <h4><a href="/small_library_app/{{ book.id }}/delete_book/"><span class="glyphicon-pencil">delete book</span></a></h4>
+{% endblock %}

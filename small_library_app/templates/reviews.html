@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% for review in reviews %}
+        <div class="review">
+            <p class="date">Created: {{ review.published|date:'d-m-Y' }}</p>
+            <h3><a href="{% url 'small_library_app.views.show_review' review.id %}">{{ review.title }}</a></h3>
+            <h4>Reviewer: {{ review.name }}</h4>
+        </div>
+    {% endfor %}
+
+{% endblock %}

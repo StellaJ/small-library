@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <h1>{{ review.title }}</h1><br>
+  <p>{{ review.published }}</p>
+  <p>{{ review.name }}</p>
+  <p>{{ review.content }}</p>
+  <h4><a href="{% url 'small_library_app.views.home' %}"><span class="glyphicon-pencil">return to list of books</span></a></h4>
+  <h4><a href="{% url 'small_library_app.views.edit_review' review.id %}"><span class="glyphicon-pencil">edit review</span></a></h4>
+  <h4><a href="/small_library_app/{{ review.id }}/delete_review/"><span class="glyphicon-pencil">delete review</span></a></h4>
+{% endblock %}

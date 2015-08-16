@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% for book in books %}
+        <div class="book">
+            <p class="date">Created: {{ book.published|date:'d-m-Y' }}</p>
+            <h3><strong><a href="{% url 'small_library_app.views.show_book' book.id %}">{{ book.title }}</a></strong></h3>
+            <h4>{{ book.author }}</h4><hr>
+        </div>
+    {% endfor %}
+    <h4><strong><a href="{% url 'small_library_app.views.new_book' %}"><span class="glyphicon-pencil">create book</span></a></strong></h4>
+    <h4><strong><a href="{% url 'small_library_app.views.reviews' %}"><span class="glyphicon-pencil">go to reviews</span></a></strong></h4>
+{% endblock %}

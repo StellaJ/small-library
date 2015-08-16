@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data" action="{% url 'small_library_app.views.new_book' %}" >
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="save btn btn-default">Create book</button>
+  </form>
+{% endblock %}
