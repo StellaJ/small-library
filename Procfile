@@ -1,0 +1,1 @@
+web: gunicorn small_library.wsgi --log-file -
