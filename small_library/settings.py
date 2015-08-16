@@ -102,7 +102,7 @@ USE_TZ = True
 
 MEDIA_URL = '/desc/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'desc')
+MEDIA_ROOT = os.path.join(BASE_DIR,  "desc")
 
 MEDIAFILES_DIRS = (MEDIA_ROOT)
 
