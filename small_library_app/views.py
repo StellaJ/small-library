@@ -25,7 +25,7 @@ def new_book(request):
             description = request.FILES['description']
             new_book = Book(author=author, title=title, ISBN=ISBN, published=published, description=description)
             new_book.save()
-            return HttpResponseRedirect('/library/home/')
+            return HttpResponseRedirect('/small_library_app/home/')
         else:
             return render(request, 'new_book.html', {'form' : form})
     else:
@@ -35,7 +35,7 @@ def new_book(request):
 def delete_book(request, id):
     book = get_object_or_404(Book, id=id)
     book.delete()
-    return redirect('library.views.home')
+    return redirect('small_library_app.views.home')
 
 def new_review(request, book_id):
     boo = Book.objects.get(id=book_id)
@@ -48,7 +48,7 @@ def new_review(request, book_id):
             review.book = boo
             review.save()
 
-            return HttpResponseRedirect('/library/show_book/%s' % book_id)
+            return HttpResponseRedirect('/small_library_app/show_book/%s' % book_id)
 
     else:
         rf = ReviewForm()
@@ -75,7 +75,7 @@ def edit_review(request, review_id):
         if form.is_valid():
             review = form.save(commit=False)
             review.save()
-            return HttpResponseRedirect('/library/show_review/%s' % review_id)
+            return HttpResponseRedirect('/small_library_app/show_review/%s' % review_id)
     else:
         form = ReviewForm(instance=review)
     return render(request, 'edit_review.html', {'form': form})
@@ -83,4 +83,4 @@ def edit_review(request, review_id):
 def delete_review(request, id):
     review = get_object_or_404(Review, id=id)
     review.delete()
-    return redirect('library.views.home')
+    return redirect('small_library_app.views.home')
