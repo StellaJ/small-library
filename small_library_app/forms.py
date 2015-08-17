@@ -8,7 +8,8 @@ class BookForm(forms.Form):
 	title = forms.CharField(label="Title", max_length=200)
 	ISBN = forms.CharField(label="ISBN", max_length=13)
 	published = forms.DateTimeField(label="Date of publication")
-	description = forms.FileField(label="Description", help_text='max. 10 MB')
+	link = forms.CharField(label="Link", max_length=400)
+
 
 class ReviewForm(forms.ModelForm):
 

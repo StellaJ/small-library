@@ -3,7 +3,8 @@
   <h1><strong>{{ book.title }}</strong></h1><br>
   <p>Author: {{ book.author }}</p>
   <p>ISBN: {{ book.ISBN }}</p>
-  <img src="{{ book.description.url }}" class="img-thumbnail">
+  <a href="{{ book.link }}" terget="_blank">Link: {{ book.link }}</a>
+ <!--  <img src="{{ book.description.url }}" class="img-thumbnail"> -->
   <div>
     <h4 class="text-info">Review</h4>
     {% for r in book.review_set.all %}

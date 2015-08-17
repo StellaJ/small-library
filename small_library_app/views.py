@@ -21,9 +21,10 @@ def new_book(request):
             author = form.cleaned_data['author']
             title = form.cleaned_data['title']
             ISBN = form.cleaned_data['ISBN']
+            link = form.cleaned_data['link']
             published = form.cleaned_data['published']
-            description = request.FILES['description']
-            new_book = Book(author=author, title=title, ISBN=ISBN, published=published, description=description)
+            # description = request.FILES['description']
+            new_book = Book(author=author, title=title, ISBN=ISBN, published=published, link=link)
             new_book.save()
             return HttpResponseRedirect('/small_library_app/home/')
         else:

@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     (r'^show_book/(?P<book_id>\d+)/$', 'small_library_app.views.show_book'),
     (r'^(?P<id>\d+)/delete_book/$', 'small_library_app.views.delete_book'),
     (r'^reviews/$', 'small_library_app.views.reviews'),
+    (r'^show_book/(?P<book_id>\d+)/boook.url.link/$', 'small_library_app.views.show_book'),
+
 
     (r'^(?P<book_id>\d+)/new_review/$', 'small_library_app.views.new_review'),
     (r'^show_review/(?P<review_id>\d+)/$', 'small_library_app.views.show_review'),
