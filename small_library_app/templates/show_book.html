@@ -8,7 +8,7 @@
   <div>
     <h4 class="text-info">Review</h4>
     {% for r in book.review_set.all %}
-    <div class="review">
+    <div class="review animate_me">
     	<h5><span><em>Author: {{ r.name }}</em></span></h5>
     	<h5><em>Date of publication: {{ r.published }}</em></h5>
     	<h4>{{ r.content }}</h4>
