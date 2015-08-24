@@ -13,8 +13,8 @@
   </head>
   <body>
     <div class="modal-header">
-      <a href="{% url 'small_library_app.views.home' %}"><img src="{% static 'img/poziom.jpg' %}" class="img-thumbnail"></a>
-      <h1> Small Library</h1>
+      <a href="{% url 'small_library_app.views.home' %}"><div class="img-scale"><img src="{% static 'img/logo.jpg' %}" class="img-thumbnail"></div>
+      <h1> Small Library</h1></a>
     </div>
     <div class="container">
     	{% block content %}
